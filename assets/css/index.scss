@@ -1,0 +1,637 @@
+@charset "UTF-8";
+@use "config";
+@use "ease.scss";
+body {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.container {
+    padding: 0 160px;
+}
+
+.button {
+    width: 219px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .button-text {
+        padding-right: 16px;
+    }
+}
+
+.item {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    .item-num {
+        transform: rotate(90deg);
+        position: absolute;
+        top: 13vh;
+        left: 13vh;
+        font-size: 1em;
+        font-weight: 300;
+    }
+    .item-inner {
+        width: 50%;
+        transition-duration: 0.5s;
+        transition-property: transform;
+        &:hover {
+            transform: scale(1.1);
+        }
+        video {
+            width: 100%;
+        }
+        img {
+            width: 50%;
+        }
+    }
+    .item-title {
+        width: 100%;
+        text-align: center;
+        padding-top: 32px;
+    }
+    .item-title {
+        font-size: 24px;
+        width: 40%;
+        .item-heading {
+            font-weight: bold;
+        }
+        .item-soft {
+            font-size: 16px;
+            padding-top: 12px;
+        }
+        .item-text {
+            font-size: 16px;
+            padding-top: 24px;
+            line-height: 24px;
+        }
+    }
+}
+
+.item-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.works-title {
+    padding-top: 32px;
+    padding-bottom: 64px;
+    .works-heading {
+        font-size: 52px;
+        padding-bottom: 12px;
+    }
+    .works-sub-heading-1 {
+        position: relative;
+        font-size: 14px;
+        &::after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 1px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            bottom: -75%;
+            margin-left: -15px;
+        }
+    }
+    .works-sub-heading-2 {
+        position: relative;
+        font-size: 14px;
+        &::after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 1px;
+            background-color: #000;
+            position: absolute;
+            left: 50%;
+            bottom: -75%;
+            margin-left: -15px;
+        }
+    }
+    .works-text {
+        font-size: 16px;
+        line-height: 32px;
+        padding-top: 64px;
+        font-weight: 200;
+    }
+}
+
+.fadeLeft {
+    animation-name: fadeLeftAnime;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
+}
+
+@keyframes fadeLeftAnime {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes animation-sample {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes change-color-anim {
+    100% {
+        background-color: #d8d8d8;
+    }
+}
+
+.kv {
+    .kv-inner {
+        display: flex;
+        height: 100vh;
+        &:hover {
+            .kv-left {
+                animation: change-color-anim 15s linear infinite;
+            }
+            .kv-right {
+                animation: change-color-anim 15s linear infinite;
+            }
+        }
+        .kv-left {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            width: 50%;
+            background-color: #000;
+            overflow: hidden;
+            // background-image: url(../img/index/fix-obj-d.svg);
+            // background-position: left 0;
+            // background-repeat: no-repeat;
+            // background-size: cover;
+            .kv-title {
+                position: absolute;
+                left: 9vh;
+                top: 8vh;
+                margin: 0;
+                color: #fff;
+                font-size: 6vh;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-weight: 500;
+            }
+            .kv-name {
+                position: absolute;
+                left: 9.3vh;
+                top: 15.5vh;
+                margin: 0;
+                color: #fff;
+                font-size: 1.5vh;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+                font-weight: 200;
+            }
+            span {
+                position: absolute;
+                height: 29vh;
+                width: 1px;
+                right: 22vh;
+                top: 0;
+                display: block;
+                background-color: #fff;
+            }
+            .kv-left-rotate {
+                width: 74vh;
+                position: absolute;
+                right: 2vh;
+                top: 36vh;
+                animation-name: animation-sample;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+        }
+        .kv-right {
+            position: relative;
+            width: 50%;
+            background-color: #fff;
+            // background-image: url(../img/index/fix-obj-e.svg);
+            // background-position: center left 0;
+            // background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            .kv-right-image {
+                height: 100%;
+                width: 70vh;
+            }
+            .kv-right-rotate {
+                position: absolute;
+                width: 94vh;
+                left: -10vh;
+                bottom: 4vh;
+                animation-name: animation-sample;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+        }
+    }
+}
+
+.philosophy {
+    .philo-inner {
+        display: flex;
+        height: 100vh;
+        .philo-left {
+            position: relative;
+            width: 50%;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #000;
+            .bg {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #000;
+                transform-origin: right top;
+                transition: transform 0.5s ease;
+            }
+            .philo-icon {
+                transition: transform 0.2s ease-in 0.0s;
+            }
+            &:hover {
+                .philo-icon {
+                    transform: rotate(45deg);
+                    transition: transform 0.2s ease-in 1.5s;
+                }
+                .bg {
+                    transform: scaleX(0);
+                }
+                .philo-heading {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    animation: flowing-anim 5s;
+                }
+            }
+            .philo-heading {
+                font-size: 100px;
+                line-height: 180px;
+                font-weight: bold;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                z-index: 1;
+                // .color-code {
+                //     background-color: #000;
+                //     color: #fff;
+                //     padding: 0 10px;
+                // }
+                // .color-design {
+                //     background-color: #fff;
+                //     color: #000;
+                //     padding: 0 10px;
+                // }
+            }
+            @keyframes flowing-anim {
+                0% {
+                    width: 0%;
+                }
+                100% {
+                    width: 100%;
+                }
+            }
+        }
+        .philo-right {
+            position: relative;
+            width: 50%;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            .philo-text {
+                position: relative;
+                line-height: 40px;
+                // background-color: #000;
+                color: #fff;
+                width: 80%;
+                font-size: 1vw;
+                z-index: 1;
+                transition: color 0.2s;
+            }
+            .bg {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #000;
+                transform-origin: left top;
+                transition: transform 0.5s ease;
+            }
+            &:hover {
+                .philo-text {
+                    color: #000;
+                }
+                .bg {
+                    transform: scaleX(0);
+                }
+            }
+        }
+    }
+}
+
+// .philosophy {
+//     background-color: #F8F8F8;
+//     height: 100vh;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     font-weight: 400;
+//     position: relative;
+//     .philo-line {
+//         position: absolute;
+//         height: 29vh;
+//         width: 1px;
+//         right: 22vh;
+//         top: 0;
+//         display: block;
+//         background-color: #000;
+//     }
+//     .philo-inner {
+//         display: flex;
+//         h2 {
+//             width: 50%;
+//             margin: 0;
+//             padding-bottom: 50px;
+//             font-size: 90px;
+//             line-height: 160px;
+//             font-weight: bold;
+//             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+//             .color-code {
+//                 background-color: #000;
+//                 color: #fff;
+//                 padding: 0 10px;
+//             }
+//             .color-design {
+//                 background-color: #fff;
+//                 color: #000;
+//                 padding: 0 10px;
+//             }
+//         }
+//         .philo-text {
+//             line-height: 40px;
+//             width: 50%;
+//             background-color: #000;
+//             color: #fff;
+//         }
+//     }
+// }
+.area {
+    overflow: hidden;
+    height: 100vh;
+    .wrap {
+        display: flex;
+        background-color: #000;
+        .item01 {
+            color: #fff;
+            .works-cording {}
+        }
+        .item02 {
+            background: #fff;
+            color: #000;
+            .works-design {}
+        }
+    }
+}
+
+// .works {
+//     .works-inner {
+//         display: flex;
+//         height: 100vh;
+//         .works-left {
+//             width: 50%;
+//             background-color: #000;
+//             display: flex;
+//             flex-direction: column;
+//             align-items: center;
+//             justify-content: center;
+//             text-align: center;
+//             color: #fff;
+//             a {
+//                 text-decoration: none;
+//                 color: #fff;
+//                 .works-button {
+//                     border: solid 1px #fff;
+//                     margin-top: 120px;
+//                 }
+//             }
+//         }
+//         .works-right {
+//             width: 50%;
+//             background-color: #fff;
+//             display: flex;
+//             flex-direction: column;
+//             align-items: center;
+//             justify-content: center;
+//             text-align: center;
+//             color: #000;
+//             a {
+//                 text-decoration: none;
+//                 color: #000;
+//                 .works-button {
+//                     border: solid 1px #000;
+//                     margin-top: 120px;
+//                 }
+//             }
+//         }
+//     }
+// }
+.contactandfooter {
+    height: 100vh;
+    .contact {
+        background-color: #F8F8F8;
+        height: 70%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .contact-text {
+            font-size: 18px;
+            line-height: 40px;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+            margin-top: 60px;
+            .contact-button {
+                border: 1px solid #000;
+                svg {
+                    fill: #000;
+                    stroke: #000;
+                }
+            }
+            &:hover {
+                color: #fff;
+                background-color: #000;
+                svg {
+                    fill: #fff;
+                    stroke: #fff;
+                }
+            }
+        }
+    }
+    .footer {
+        height: 30%;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .footer-inner {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            .footer-left {
+                display: flex;
+                align-items: flex-end;
+                .footer-content {
+                    padding-left: 23px;
+                    .footer-sub-name {
+                        font-size: 10px;
+                        padding-bottom: 5px;
+                    }
+                    .footer-name {
+                        font-weight: 400;
+                        padding-bottom: 26px;
+                    }
+                    .footer-text {
+                        font-size: 14px;
+                    }
+                }
+            }
+            .footer-right {
+                a {
+                    text-decoration: none;
+                    img {
+                        padding-left: 20px;
+                    }
+                }
+                .copyright {
+                    font-size: 12px;
+                    color: grey;
+                    text-align: right;
+                    padding-top: 5px;
+                }
+            }
+        }
+    }
+}
+
+@include config.bp(sp) {
+    body {
+        width: 100%;
+        min-height: 100vh;
+        font-size: 14px;
+    }
+    .container {
+        padding: 16px;
+    }
+    .philosophy {
+        position: relative;
+        .philo-line {
+            position: absolute;
+            height: 29vh;
+            width: 1px;
+            right: 22vh;
+            top: 0;
+            display: block;
+            background-color: #000;
+        }
+        h2 {
+            font-size: 40px;
+            line-height: 1.5em;
+        }
+        .philo-text {
+            line-height: 40px;
+            width: 100%;
+        }
+    }
+    .works-title {
+        .works-text {
+            font-size: 14px;
+        }
+    }
+    .contactandfooter {
+        .contact {
+            .contact-text {
+                font-size: 14px;
+                line-height: 30px;
+                padding: 16px;
+            }
+            a {
+                .contact-button {}
+                &:hover {}
+            }
+        }
+        .footer {
+            .footer-inner {
+                display: block !important;
+                .footer-left {
+                    img {
+                        display: none;
+                    }
+                    .footer-content {
+                        padding-left: 0;
+                        .footer-sub-name {
+                            font-size: 10px;
+                            padding-bottom: 5px;
+                        }
+                        .footer-name {
+                            font-weight: 400;
+                            padding-bottom: 26px;
+                        }
+                        .footer-text {
+                            font-size: 14px;
+                        }
+                    }
+                }
+                .footer-right {
+                    a {
+                        img {
+                            padding-top: 20px;
+                            padding-left: 0;
+                            &.icon-insta {
+                                padding-left: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
