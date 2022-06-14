@@ -488,24 +488,24 @@ body {
     padding: 16px;
   }
 
-  .philosophy {
-    position: relative;
+  .philosophy .philo-inner .philo-left {
+    display: flex;
+    width: 100%;
   }
-  .philosophy .philo-line {
-    position: absolute;
-    height: 29vh;
-    width: 1px;
-    right: 22vh;
-    top: 0;
-    display: block;
-    background-color: #000;
+  .philosophy .philo-inner .philo-left .bg {
+    display: none;
   }
-  .philosophy h2 {
-    font-size: 40px;
-    line-height: 1.5em;
+  .philosophy .philo-inner .philo-left .philo-heading {
+    font-size: 24px;
+    line-height: 32px;
+    padding: 24px 0;
   }
-  .philosophy .philo-text {
-    line-height: 40px;
+  .philosophy .philo-inner .philo-left img {
+    width: 30px;
+    transform: rotate(45deg);
+  }
+  .philosophy .philo-inner .philo-right {
+    display: flex;
     width: 100%;
   }
 

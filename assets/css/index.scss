@@ -561,23 +561,27 @@ body {
         padding: 16px;
     }
     .philosophy {
-        position: relative;
-        .philo-line {
-            position: absolute;
-            height: 29vh;
-            width: 1px;
-            right: 22vh;
-            top: 0;
-            display: block;
-            background-color: #000;
-        }
-        h2 {
-            font-size: 40px;
-            line-height: 1.5em;
-        }
-        .philo-text {
-            line-height: 40px;
-            width: 100%;
+        .philo-inner {
+            .philo-left {
+                display: flex;
+                width: 100%;
+                .bg {
+                    display: none;
+                }
+                .philo-heading {
+                    font-size: 24px;
+                    line-height: 32px;
+                    padding: 24px 0;
+                }
+                img {
+                    width: 30px;
+                    transform: rotate(45deg);
+                }
+            }
+            .philo-right {
+                display: flex;
+                width: 100%;
+            }
         }
     }
     .works-title {
