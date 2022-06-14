@@ -1,6 +1,5 @@
 @charset "UTF-8";
 @use "config";
-@use "ease.scss";
 body {
     margin: 0;
     width: 100%;
@@ -337,7 +336,7 @@ body {
                 line-height: 40px;
                 // background-color: #000;
                 color: #fff;
-                width: 80%;
+                width: 90%;
                 font-size: 1vw;
                 z-index: 1;
                 transition: color 0.2s;
